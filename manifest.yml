@@ -1,0 +1,12 @@
+applications:
+    -   name: training-backend
+        memory: 1G
+        instances: 1
+        disk: 1G
+        path: target/training-backend.jar
+        buildpacks:
+            - https://github.com/cloudfoundry/java-buildpack.git
+        services:
+            - training-hana-schema
+        env:
+            JBP_CONFIG_COMPONENTS: '{jres: ["JavaBuildpack::Jre::SapMachineJRE"]}'

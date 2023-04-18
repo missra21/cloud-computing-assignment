@@ -64,6 +64,7 @@ public interface Constants {
         String BANDWIDTH_LIMIT_EXCEEDED_MESSAGE = " bandwidthLimitExceeded.";
         String NOT_EXTENDED_MESSAGE = " notExtended.";
         String NETWORK_AUTHENTICATION_REQUIRED_MESSAGE = " networkAuthenticationRequired.";
+        String USER_DELETED = "User Deleted Successfully";
     }
 
     interface ErrorMessages {

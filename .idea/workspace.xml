@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408cb597-ba8b-40cf-aea2-51df25afa50c" name="Changes" comment="sample SpringBoot Application">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/controller/UsersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/dtos/response/DemoApplicationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/exceptions/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/exceptions/DemoApplicationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/exceptions/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/exceptions/UserAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/exceptions/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/util/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="408cb597-ba8b-40cf-aea2-51df25afa50c" name="Changes" comment="integrated with h2 database">
+      <change afterPath="$PROJECT_DIR$/manifest.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sap/config/HanaCloudConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sap/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sap/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sap/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sap/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sap/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sap/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sap/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sap/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sampleApp" />
+        <entry key="$PROJECT_DIR$" value="withH2Database" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,7 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/I526046/git/training/training-backend/training-backend/src/main/resources",
+    "last_opened_file_path": "/Users/I526046/git/training/training-backend/training-backend/src/main/java/com/sap",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,14 +73,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/sap" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sap.config" />
       <recent name="com.sap.exceptions" />
       <recent name="com.sap.dtos.response" />
       <recent name="com.sap.util" />
       <recent name="com.sap.service" />
-      <recent name="com.sap.controller" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -137,7 +134,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681838608170</updated>
-      <workItem from="1681838609417" duration="4913000" />
+      <workItem from="1681838609417" duration="11030000" />
     </task>
     <task id="LOCAL-00001" summary="added gitignore">
       <created>1681838709747</created>
@@ -160,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681839128162</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="integrated with h2 database">
+      <created>1681843703489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681843703489</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +173,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added gitignore" />
     <MESSAGE value="sample SpringBoot Application" />
-    <option name="LAST_COMMIT_MESSAGE" value="sample SpringBoot Application" />
+    <MESSAGE value="integrated with h2 database" />
+    <option name="LAST_COMMIT_MESSAGE" value="integrated with h2 database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

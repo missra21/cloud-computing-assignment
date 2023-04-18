@@ -8,6 +8,7 @@ import com.sap.service.UserService;
 import com.sap.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,14 +36,18 @@ public class UsersController {
     }
 
     @GetMapping("/{uuid}")
-    public ResponseEntity<DemoApplicationResponse<User>> getUser(@PathVariable UUID uuid) throws UserNotFoundException {
-        return DemoApplicationResponse.ok(userService.findById(uuid));
+    public ResponseEntity<DemoApplicationResponse<User>> getUser(@PathVariable UUID uuid) {
+        try {
+            return DemoApplicationResponse.ok(userService.findById(uuid));
+        } catch (UserNotFoundException e) {
+            return DemoApplicationResponse.badRequest(e.getMessage());
+        }
     }
 
     @GetMapping("/empId/{id}")
     public ResponseEntity<DemoApplicationResponse<User>> getUserbyEmpId(@PathVariable String id) {
         User user = userService.findByEmpId(id);
-        if (null == user){
+        if (null == user) {
             return DemoApplicationResponse.notFound(Constants.ErrorMessages.USER_NOT_FOUND);
         }
         return DemoApplicationResponse.ok(user);
@@ -56,6 +61,14 @@ public class UsersController {
             return DemoApplicationResponse.badRequest(Constants.ErrorMessages.USER_ALREADY_EXISTS);
         }
         return DemoApplicationResponse.created("User Added successfully");
+    }
+
+    @DeleteMapping("/{uuid}")
+    public ResponseEntity<DemoApplicationResponse<User>> deleteUser(@PathVariable UUID uuid) {
+        if (userService.deleteById(uuid)) {
+            return DemoApplicationResponse.noContent(Constants.ResponseMessages.USER_DELETED);
+        }
+        return DemoApplicationResponse.notFound(Constants.ErrorMessages.USER_NOT_FOUND);
     }
 
 }

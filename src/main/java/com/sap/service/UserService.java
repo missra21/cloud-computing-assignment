@@ -45,4 +45,12 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public boolean deleteById(UUID id) {
+        if (userRepository.existsById(id)){
+            userRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 }
