@@ -37,3 +37,4 @@ build/
 
 .history/
 .DS_Store
+/.idea/
