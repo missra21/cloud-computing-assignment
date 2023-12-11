@@ -6,6 +6,10 @@ public class NotFoundException extends DemoApplicationException {
         super(s);
     }
 
+    public NotFoundException(Long s) {
+        super(String.valueOf(s));
+    }
+
     public NotFoundException(String message, Throwable cause) {
         super(message, cause);
     }

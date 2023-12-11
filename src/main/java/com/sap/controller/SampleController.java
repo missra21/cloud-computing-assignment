@@ -8,6 +8,6 @@ public class SampleController {
 
     @GetMapping
     public String sayHello(){
-        return "Hello from Spring!";
+        return "Hello, This is Cloud Computing assignment!";
     }
 }

@@ -26,7 +26,7 @@ public interface Constants {
         String TEMPORARY_REDIRECT_MESSAGE = " temporaryRedirect.";
         String PERMANENT_REDIRECT_MESSAGE = " permanentRedirect.";
         String BAD_REQUEST_MESSAGE = "Bad request.";
-        String UNAUTHORIZED_MESSAGE = "Unauthorized request user not logged in.";
+        String UNAUTHORIZED_MESSAGE = "Unauthorized request Product not logged in.";
         String PAYMENT_REQUIRED_MESSAGE = " paymentRequired.";
         String FORBIDDEN_MESSAGE = "resource forbidden.";
         String NOT_FOUND_MESSAGE = "resource notFound.";
@@ -64,11 +64,11 @@ public interface Constants {
         String BANDWIDTH_LIMIT_EXCEEDED_MESSAGE = " bandwidthLimitExceeded.";
         String NOT_EXTENDED_MESSAGE = " notExtended.";
         String NETWORK_AUTHENTICATION_REQUIRED_MESSAGE = " networkAuthenticationRequired.";
-        String USER_DELETED = "User Deleted Successfully";
+        String USER_DELETED = "Product Deleted Successfully";
     }
 
     interface ErrorMessages {
-        String USER_NOT_FOUND = "User not found";
-        String USER_ALREADY_EXISTS = "User already exists";
+        String USER_NOT_FOUND = "Product not found";
+        String USER_ALREADY_EXISTS = "Product already exists";
     }
 }
